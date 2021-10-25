@@ -6,6 +6,7 @@ all: $(PROGS)
 
 % : %.go
 	go fmt $<
+	goimports -l -w $<
 	go vet $<
 	go build -o $@ $<
 
